@@ -3,5 +3,15 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/ezcolas/{application}
-        
+          uri: https://github.com/ezcolas/app-config-repo
+          repos:
+            dev:
+              pattern:
+                - '*/development'
+                - '*/staging'
+              uri: https://github.com/ezcolas/development/app-config-repo
+            staging:
+              pattern:
+                - '*/qa'
+                - '*/production'
+              uri: https://github.com/ezcolas/staging/app-config-repo
